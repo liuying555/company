@@ -1,5 +1,5 @@
 
-import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { Component, TemplateRef,OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-layer',
