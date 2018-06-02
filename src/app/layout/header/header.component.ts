@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, Input} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  isCollapsed = false;
+  @Output() siderShow = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
+   /**
+   * 切换
+   */
+  switchCollapsed() {
+    this.isCollapsed = !this.isCollapsed;
+    this.siderShow.emit(this.isCollapsed);
+  }
+
 
 }

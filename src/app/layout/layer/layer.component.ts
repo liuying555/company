@@ -1,5 +1,5 @@
 
-import { Component, TemplateRef,OnInit, ViewChild } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild, TemplateRef} from '@angular/core';
 
 @Component({
   selector: 'app-layer',
@@ -11,15 +11,26 @@ export class LayerComponent implements OnInit {
   triggerTemplate = null;
   @ViewChild('trigger') customTrigger: TemplateRef<void>;
 
+  constructor() { }
+
+  ngOnInit() {
+  }
+
   /** custom trigger can be TemplateRef **/
   changeTrigger(): void {
     this.triggerTemplate = this.customTrigger;
   }
 
 
-  constructor() { }
-
-  ngOnInit() {
+  showCollapsedSider($event) {
+    this.isCollapsed = $event;
   }
+  /**
+   * 设置tabs
+   * @param $event
+   */
+
+
+
 
 }

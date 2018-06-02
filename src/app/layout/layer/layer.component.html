@@ -1,10 +1,10 @@
 <nz-layout>
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate">
-    <app-siderbar ></app-siderbar>
+    <app-siderbar [isCollapsed]="isCollapsed" ></app-siderbar>
   </nz-sider>
   <nz-layout>
     <nz-header style="background: #fff; padding:0;">
-      <app-header ></app-header>
+      <app-header (siderShow)="showCollapsedSider($event)"  ></app-header>
     </nz-header>
     <nz-content style="margin:0 16px;">
       <app-content></app-content>
@@ -15,3 +15,4 @@
 <ng-template #trigger>
   <i class="anticon anticon-up"></i>
 </ng-template>
+

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-siderbar',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiderbarComponent implements OnInit {
 
-
+  @Input() isCollapsed;
   constructor() { }
 
   ngOnInit() {
