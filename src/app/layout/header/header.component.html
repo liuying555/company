@@ -1,2 +1,18 @@
 <i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed"  (click)="switchCollapsed()"></i>
+<nz-dropdown>
+  <a nz-dropdown >
+    个人中心 <i class="anticon anticon-down"></i>
+  </a>
+  <ul nz-menu nzSelectable>
+    <li nz-menu-item>
+      <a>1st menu item</a>
+    </li>
+    <li nz-menu-item>
+      <a>2nd menu item</a>
+    </li>
+    <li nz-menu-item>
+      <a>3rd menu item</a>
+    </li>
+  </ul>
+</nz-dropdown>
 
