@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
+import {
+  ActivatedRoute,
+  Router,
+  ActivatedRouteSnapshot,
+  RouterState,
+  RouterStateSnapshot
+} from '@angular/router';
 
 @Injectable()
 export class CommonService {
 
-  constructor() {
+  constructor(public router: Router, public activatedRoute: ActivatedRoute) {
   }
 
-  loginInfor(name, age) {
-    console.log(name + age);
+  login() {
+    this.router.navigate(['layer']);
   }
 
 }

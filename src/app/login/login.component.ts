@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CommonService } from '../services/common/common.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -20,8 +19,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  constructor(private fb: FormBuilder) {
-   //  this.common.loginInfor('大三', '30');
+  constructor(private fb: FormBuilder, private commonService: CommonService) {
   }
 
   ngOnInit(): void {
@@ -30,5 +28,8 @@ export class LoginComponent implements OnInit {
       password: [ null, [ Validators.required ] ],
       remember: [ true ]
     });
+  }
+  login() {
+    this.commonService.login();
   }
 }
