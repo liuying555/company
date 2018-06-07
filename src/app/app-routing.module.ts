@@ -5,9 +5,20 @@ import { LayerComponent } from './layout/layer/layer.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'layer', component: LayerComponent }
+  {path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  {path: 'login',
+    component: LoginComponent
+  },
+  {path: 'layer',
+    component: LayerComponent
+  },
+  {
+    path: '**', // fallback router must in the last
+    component: LoginComponent
+  }
 ];
 
 @NgModule({
