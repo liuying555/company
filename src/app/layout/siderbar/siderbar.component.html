@@ -10,11 +10,10 @@
       <li nz-menu-item>分段统计</li>
     </ul>
   </li>
-  <li nz-submenu>
-    <span title><i class="anticon anticon-team"></i><span class="nav-text">Team</span></span>
-    <ul>
-      <li nz-menu-item>Team 1</li>
-      <li nz-menu-item>Team 2</li>
+  <li nz-submenu *ngFor="let menu of menus">
+    <span title><i class="anticon anticon-team"></i><span class="nav-text"> {{menu.menuName}} </span></span>
+    <ul *ngIf="menu.isParent == 'true'">
+      <li nz-menu-item *ngFor="let sub of menu.subMenu">{{sub.menuName}}</li>
     </ul>
   </li>
 </ul>

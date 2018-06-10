@@ -1,18 +1,28 @@
-<i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed"  (click)="switchCollapsed()"></i>
-<nz-dropdown>
-  <a nz-dropdown >
-    个人中心 <i class="anticon anticon-down"></i>
-  </a>
-  <ul nz-menu nzSelectable>
-    <li nz-menu-item>
-      <a>1st menu item</a>
-    </li>
-    <li nz-menu-item>
-      <a>2nd menu item</a>
-    </li>
-    <li nz-menu-item>
-      <a>3rd menu item</a>
-    </li>
-  </ul>
-</nz-dropdown>
+
+<div nz-row nzType="flex" nzJustify="space-between">
+  <div nz-col nzSpan="2">
+
+    <i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed"  (click)="switchCollapsed()"></i>
+  </div>
+  <div nz-col [nzPull]="1">
+    <ul nz-menu [nzMode]="'horizontal'" style="margin-right:25px;">
+      <li nz-menu-item><i class="anticon anticon-mail"></i> Navigation One</li>
+      <li nz-menu-item nzDisabled><i class="anticon anticon-appstore"></i> Navigation Two</li>
+      <li nz-submenu>
+        <span title><i class="anticon anticon-setting"></i> 个人中心</span>
+        <ul>
+          <li nz-menu-group>
+            <ul>
+              <li nz-menu-item>个人中心</li>
+              <li nz-menu-item>设置</li>
+              <li nz-menu-item  routerLink="/login">退出</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
 

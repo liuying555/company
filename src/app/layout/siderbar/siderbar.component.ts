@@ -1,4 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {CommonService } from '../../services/common/common.service';
 
 @Component({
   selector: 'app-siderbar',
@@ -8,9 +10,14 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class SiderbarComponent implements OnInit {
 
   @Input() isCollapsed;
-  constructor() { }
+  menus: any;
+  constructor(private commonService: CommonService) {
+  }
 
   ngOnInit() {
+    this.commonService.menuList().subscribe((result: any ) => {
+      this.menus = result.menu;
+    });
   }
 
 }

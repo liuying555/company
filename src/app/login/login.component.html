@@ -2,8 +2,6 @@
 <nz-layout>
   <nz-header>Header</nz-header>
   <nz-content>
-    <div nz-row>
-      <div nz-col [nzOffset]="8" [nzSpan]="16">
         <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
           <nz-form-item>
             <nz-form-control>
@@ -33,10 +31,6 @@
             </nz-form-control>
           </nz-form-item>
         </form>
-
-
-      </div>
-    </div>
 
   </nz-content>
   <nz-footer>Footer</nz-footer>
