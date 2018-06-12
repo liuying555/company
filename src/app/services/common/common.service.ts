@@ -7,7 +7,7 @@ import {
   RouterState,
   RouterStateSnapshot
 } from '@angular/router';
-import { MENUS_URL} from '../url-service-config';
+import { MENUS_URL } from '../url-service-config';
 
 
 @Injectable()
@@ -26,7 +26,7 @@ export class CommonService {
   menuList() {
     return this.http
       .get(MENUS_URL).pipe();
-}
+  }
 
 
 }
